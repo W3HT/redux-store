@@ -11,7 +11,9 @@ import { setContext } from '@apollo/client/link/context';
 /* TODO: Import the destructured Redux Provider from "react-redux", and the store
 from the store.js file in utils */
 import { Provider } from 'react-redux';
-import { store } from './utils/store'
+import store from './utils/store';
+
+
 import Home from './pages/Home';
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';

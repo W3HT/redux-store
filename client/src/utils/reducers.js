@@ -28,7 +28,8 @@ import {
   CLEAR_CART,
   TOGGLE_CART
 } from "./actions";
-import store from "./store";
+
+// import store from "./store";
 
 // Here we define the initial state value for all the data points we are keeping track of.
 const initialState = {
@@ -65,12 +66,12 @@ export const reducers = (state = initialState, action) => {
       };
 
 
-    /*  ADD_MULTIPLE_TO_CART. It duplicate current state, 
+    /* TODO:  create a case statement for ADD_MULTIPLE_TO_CART. It should duplicate current state, 
     then update the cart array: first by duplicating the existing cart, then adding all new products 
     passed in via the action object. */
     case ADD_MULTIPLE_TO_CART:
       return {
-        ...store,
+        ...state,
         cart: [...state.cart, ...action.products],
 
       }
@@ -99,7 +100,8 @@ export const reducers = (state = initialState, action) => {
         cart: newState
       };
 
-    
+    /* TODO: create a case statement for CLEAR_CART. It should duplicate current state, 
+    set cartOpen to false, and empty the cart array. */
     case CLEAR_CART:
       return {
         ...state,
@@ -107,7 +109,8 @@ export const reducers = (state = initialState, action) => {
         cart: []
       };
 
-    
+    /* TODO: create a case statement for TOGGLE_CART. It should duplicate the current 
+    state, then set the cartOpen variable to it's opposite value. */
     case TOGGLE_CART:
       return {
         ...state,
@@ -120,7 +123,9 @@ export const reducers = (state = initialState, action) => {
         categories: [...action.categories],
       };
 
-    
+    /* TODO: create a case statement for UPDATE_CURRENT_CATEGORY. It should duplicate 
+    the current state, then modify the currentCategory to whatever is passed in via the 
+    action object. */
     case UPDATE_CURRENT_CATEGORY:
       return {
         ...state,
